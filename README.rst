@@ -6,7 +6,7 @@ Hangman
 .. image:: https://coveralls.io/repos/github/mos-polytech/hangman/badge.svg?branch=master
     :target: https://coveralls.io/github/mos-polytech/hangman?branch=master
 
-This is a hangman game wrote by @sobolevn.
+This is a hangman game written by @sobolevn.
 
 
 Installation
@@ -36,4 +36,4 @@ How to run:
 
 0. ``pipenv install --dev`` (only once)
 1. ``pipenv shell``
-2. ``mypy``
+2. ``mypy --strict-optional hangman``
