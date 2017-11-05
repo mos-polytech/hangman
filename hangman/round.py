@@ -32,8 +32,8 @@ class Round(object):
             return
 
         if letter in self.word:
-            for index, l in enumerate(self.word):
-                if l == letter:
+            for index, word_letter in enumerate(self.word):
+                if word_letter == letter:
                     self.word_status[index] = True
         else:
             self.wrong_tries += 1
