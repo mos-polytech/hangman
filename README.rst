@@ -22,8 +22,18 @@ Testing
 
 We don't have any tests yet.
 
+How to run:
+
+0. ``pipenv install --dev`` (only once)
+1. ``pipenv shell``
+2. ``pytest``
+
 
 Type checking
 -------------
 
-We don't have any type checks yet.
+How to run:
+
+0. ``pipenv install --dev`` (only once)
+1. ``pipenv shell``
+2. ``mypy``
