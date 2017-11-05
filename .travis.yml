@@ -12,7 +12,7 @@ install:
   - pipenv install --system --deploy --dev
 
 script:
-  - pytest --c
+  - pytest
   - mypy --strict-optional hangman
 
 after_success:
