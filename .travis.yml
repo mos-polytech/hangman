@@ -7,7 +7,7 @@ env:
   - PIPENV_SHELL_COMPAT=true PIPENV_COLORBLIND=true PIPENV_NOSPIN=true
 
 install:
-  - pip install .
+  - pip install -e .
   - pip install pipenv
   - pipenv install --system --deploy --dev
 
