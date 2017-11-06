@@ -26,6 +26,7 @@ coveralls = "*"
 
 [packages]
 
+mypy = "*"
 
 
 [requires]
