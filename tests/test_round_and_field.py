@@ -62,9 +62,19 @@ def test_mask_letter_tryed(capsys):
     test_round.try_letter('h')
     test_round.try_letter('h')
     out, _ = capsys.readouterr()
-    assert out == 'Already tried'
+    assert out == 'Already tried\n'
+
+
+def test_mask_letter_wrong():
+    from hangman.round import Round
+    test_round = Round('python')
+    wrong_tries = test_round.wrong_tries
+
+    test_round.try_letter('f')
+
+    assert test_round.wrong_tries - wrong_tries == 1
 
 
 def test_try_letter():
-
+    from  hangman.round import Round
     pass
