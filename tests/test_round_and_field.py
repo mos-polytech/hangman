@@ -23,6 +23,10 @@ def test_game_over():
     max_tries = len(HangmanField().states)
     test_round.tries = max_tries
 
+    # Правильнее бы: test_round.wrong_tries = max_tries
+    # в test_round.is_lost() почему-то проверяется количество
+    # попыток вообще, возхможно я что-то не так поняла
+
     assert test_round.is_lost() is True
 
 
@@ -112,7 +116,7 @@ def test_draw_result_wrong(capsys):
 
     test_round.draw_result()
     out, _ = capsys.readouterr()
-    assert out == '\n----------\nWord is not solved, point goes to your opponent.\n'
+    assert out == '\n----------\n\nWord is not solved, point goes to your opponent.\n'
 
 
 def test_draw_result_right(capsys):
@@ -128,4 +132,4 @@ def test_draw_result_right(capsys):
 
     test_round.draw_result()
     out, _ = capsys.readouterr()
-    assert out == '\n----------\nWord is solved, a point goes to you!\n'
+    assert out == '\n----------\n\nWord is solved, a point goes to you!\n'
