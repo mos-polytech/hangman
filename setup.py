@@ -9,7 +9,6 @@ import os
 
 from setuptools import find_packages, setup
 
-
 # What packages are required for this module to be executed?
 REQUIRED = [
     # 'requests', 'maya', 'records',
