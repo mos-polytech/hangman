@@ -116,7 +116,8 @@ def test_draw_result_wrong(capsys):
 
     test_round.draw_result()
     out, _ = capsys.readouterr()
-    assert out == '\n----------\n\nWord is not solved, point goes to your opponent.\n'
+    assert out == '\n----------\n\nWord is ' \
+                  'not solved, point goes to your opponent.\n'
 
 
 def test_draw_result_right(capsys):
