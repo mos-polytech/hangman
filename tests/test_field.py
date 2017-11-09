@@ -130,4 +130,3 @@ def test_draw_result_right(capsys):
     test_round.draw_result()
     out, _ = capsys.readouterr()
     assert out == '\n----------\n\nWord is solved, a point goes to you!\n'
-
