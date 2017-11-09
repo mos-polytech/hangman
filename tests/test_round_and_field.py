@@ -1,5 +1,6 @@
 import pytest
 
+
 def test_word_is_unsolved_on_start():
     from hangman.round import Round
 
@@ -43,6 +44,7 @@ def test_draw_field(capsys):
     test_round = Round('python')
 
     for i in HangmanField().states:
+        HangmanField().draw(i)
         out, _ = capsys.readouterr()
         assert test_round.draw_field() == out
         test_round.tries += 1
