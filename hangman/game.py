@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Game(object):
     def __init__(self):
         self.rounds = []

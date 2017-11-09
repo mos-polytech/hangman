@@ -6,10 +6,8 @@
 
 import io
 import os
-import sys
-from shutil import rmtree
 
-from setuptools import find_packages, setup, Command
+from setuptools import find_packages, setup
 
 
 # What packages are required for this module to be executed?
