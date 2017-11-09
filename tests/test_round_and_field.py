@@ -85,11 +85,26 @@ def test_mask_letter():
     assert test_round.mask_word() == 'p _ _ _ _ n'
 
 
-def test_is_finished():
+def test_is_finished_right():
+    from hangman.round import Round
+    test_round = Round('python')
+
+    test_round.try_letter('p')
+    test_round.try_letter('y')
+    test_round.try_letter('t')
+    test_round.try_letter('h')
+    test_round.try_letter('o')
+    test_round.try_letter('n')
+
+    assert test_round.is_finished() is True
+
+
+def test_is_finished_wrong():
     from hangman.round import Round
     test_round = Round('python')
 
     assert test_round.is_finished() is False
+
 
 def test_draw_result_wrong(capsys):
     from hangman.round import Round
