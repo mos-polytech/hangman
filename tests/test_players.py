@@ -36,4 +36,8 @@ def test_select_other_player():
 
 
 def test_quess_new_word():
-    pass
+    from hangman.players import HumanPlayer
+    test_human = HumanPlayer()
+    test_human.input = lambda: 'python'
+
+    assert test_human.quess_new_word() == 'python'
