@@ -43,5 +43,5 @@ def test_draw_field(capsys):
     for i in HangmanField().states:
         test_round.draw_field()
         out, _ = capsys.readouterr()
-        assert out == i or out == ''
+        assert out == i or out == '\n'
         test_round.tries += 1
