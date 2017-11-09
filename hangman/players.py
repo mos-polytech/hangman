@@ -1,6 +1,6 @@
+import random
 import string
 import uuid
-import random
 
 
 class ComputerPlayer(object):
