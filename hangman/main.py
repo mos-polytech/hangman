@@ -36,6 +36,5 @@ def start_game():
             letter = input('Letter: ')
             current_round.try_letter(letter)
 
-
         current_round.draw_result()
         game.add_round(current_round, player1, player2)
