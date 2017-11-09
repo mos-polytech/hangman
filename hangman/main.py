@@ -38,3 +38,6 @@ def start_game():
 
         current_round.draw_result()
         game.add_round(current_round, player1, player2)
+
+# if __name__ == '__main__':
+#     start_game()
