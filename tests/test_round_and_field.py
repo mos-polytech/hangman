@@ -47,7 +47,7 @@ def test_draw_field(capsys):
         test_round.tries += 1
 
 
-def test_mask_letter_right():
+def test_try_letter_right():
     from hangman.round import Round
     test_round = Round('python')
 
@@ -55,7 +55,7 @@ def test_mask_letter_right():
     assert test_round.word_status[2] is True
 
 
-def test_mask_letter_tryed(capsys):
+def test_try_letter_tryed(capsys):
     from hangman.round import Round
     test_round = Round('python')
 
@@ -65,7 +65,7 @@ def test_mask_letter_tryed(capsys):
     assert out == 'Already tried\n'
 
 
-def test_mask_letter_wrong():
+def test_try_letter_wrong():
     from hangman.round import Round
     test_round = Round('python')
     wrong_tries = test_round.wrong_tries
@@ -75,6 +75,11 @@ def test_mask_letter_wrong():
     assert test_round.wrong_tries - wrong_tries == 1
 
 
-def test_try_letter():
+def test_mask_letter():
     from  hangman.round import Round
-    pass
+    test_round = Round('python')
+
+    test_round.try_letter('p')
+    test_round.try_letter('n')
+
+    assert test_round.mask_word() == 'p _ _ _ _ n'
