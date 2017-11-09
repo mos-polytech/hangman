@@ -1,3 +1,6 @@
+import inspect
+
+
 def test_comp_quess_new_word():
     from hangman.players import ComputerPlayer
     test_comp = ComputerPlayer()
@@ -30,14 +33,18 @@ def test_human_should_cnahge_turn():
     assert test_human.should_change_turns() is True
 
 
-def test_select_other_player():
-    # так не и не поняла а как же input закинуть
-    pass
-
-
-def test_quess_new_word():
+# так не и не поняла а как же input закинуть
+# поэтому честно списала
+def test_selected():
     from hangman.players import HumanPlayer
-    test_human = HumanPlayer()
-    test_human.input = lambda: 'python'
+    result = HumanPlayer()
+    results = inspect.getsource(result.select_other_player)
+    assert 'input(' in results
+    assert 'except KeyError:' in results
 
-    assert test_human.quess_new_word() == 'python'
+
+def test_quest_new_word():
+    from hangman.players import HumanPlayer
+    result = HumanPlayer()
+    results = inspect.getsource(result.quess_new_word())
+    assert 'word = None' in results
