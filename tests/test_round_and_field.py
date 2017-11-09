@@ -45,3 +45,26 @@ def test_draw_field(capsys):
         out, _ = capsys.readouterr()
         assert out == i or out == '\n'
         test_round.tries += 1
+
+
+def test_mask_letter_right():
+    from hangman.round import Round
+    test_round = Round('python')
+
+    test_round.try_letter('t')
+    assert test_round.word_status[2] is True
+
+
+def test_mask_letter_tryed(capsys):
+    from hangman.round import Round
+    test_round = Round('python')
+
+    test_round.try_letter('h')
+    test_round.try_letter('h')
+    out, _ = capsys.readouterr()
+    assert out == 'Already tried'
+
+
+def test_try_letter():
+
+    pass
