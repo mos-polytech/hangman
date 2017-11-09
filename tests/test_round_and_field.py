@@ -98,3 +98,9 @@ def test_draw_result(capsys):
     test_round.draw_result()
     out, _ = capsys.readouterr()
     assert out == '\n----------\n\n'
+
+
+def test_empty_mark():
+    from hangman.round import Round
+    test_round = Round('python')
+    assert test_round.empty_mark == ''
