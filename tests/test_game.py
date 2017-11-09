@@ -25,4 +25,4 @@ def test_get_winner():
     test_game.add_round(test_round, test_player_one, test_player_two)
     test_game.add_round(test_round, test_player_one, test_player_two)
 
-    assert test_game.get_winner == test_player_one.id
+    assert str(test_game.get_winner) == str(test_player_one.id)
